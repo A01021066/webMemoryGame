@@ -41,7 +41,7 @@ footer {
         margin-left: 38%;
         display: inline-block;
         border-collapse: separate;
-        border-spacing: 10px 0;
+        border-spacing: 30px 0;
 }
 
 #userName {
@@ -77,7 +77,7 @@ footer {
 
 #correct{
     animation-name:flip;
-    animation-duration:4s;
+    animation-duration:5s;
     border-style: solid;
     border-width: 2.5px;
     border-color: gray;

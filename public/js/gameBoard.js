@@ -68,7 +68,7 @@ function flipTile(correctTiles, col, row){
     }
 
     //-->rotateTile()
-    setTimeout(function(){rotateTile(col, row)}, 4500);
+    setTimeout(function(){rotateTile(col, row)}, 5500);
 }
 
 function rotateTile(col, row){
