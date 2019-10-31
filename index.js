@@ -28,7 +28,7 @@ app.get('/', function(req, res){
 
 
 
-let userRouter = require('/Router/userRouter');
+let userRouter = require(express.static(__dirname +'/Router/userRouter'));
 
 app.use(userRouter);
 
