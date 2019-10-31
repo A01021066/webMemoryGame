@@ -9,3 +9,5 @@ Game board is reseted after player found all of the correct tiles on the board, 
 The minimum size of the board is 5x5, and the minimum correct tiles is set to 3.
 
 Upon ending the game, player will be prompted to enter user name for submitting the score to leaderboard. Once submitted, player can view the top 5 rankings on leader board, as well as a message telling the player what ranking was his/her score on the overall ranking. At anypoint during this, if the player wants to start another round, simply hit the restart button.
+
+For testing and marking purpose, I made a cheat mode where the correct tiles are highlighted even after flipping, should the player wish to turn it off, simply click off the check box.
