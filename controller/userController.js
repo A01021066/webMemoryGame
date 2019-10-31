@@ -24,7 +24,8 @@ exports.postAddUser = (req, res, next) => {
         score: u_score
     }
 
-    model.add(uObject);
+    model.add(uObject).then(    
+        res.redirect(301, '/ranking'));
 
-    res.redirect(301, '/ranking')
+
 }

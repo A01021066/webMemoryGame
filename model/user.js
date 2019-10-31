@@ -4,7 +4,7 @@ let db = require('../public/database/connection');
 //ranking the user based on score
 function addUser(u){
     let sql = "INSERT INTO scoreboard (username, score) VALUES ('" + u.username + "', '" + u.score + "');";
-    db.execute(sql);
+    return db.execute(sql);
 }
 
 //get all of the users from database with desecending order of score.
