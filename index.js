@@ -28,7 +28,7 @@ app.get('/', function(req, res){
 
 
 
-let userRouter = require('/router/userRouter');
+let userRouter = require('/Router/userRouter');
 
 app.use(userRouter);
 
