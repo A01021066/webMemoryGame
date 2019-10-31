@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser'); 
 let app = express();
-let db = require('./database/connection');
+let db = require('database/connection');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false })) // middleware
 
@@ -28,7 +28,7 @@ app.get('/', function(req, res){
 
 
 
-let userRouter = require(express.static(__dirname +'/Router/userRouter'));
+let userRouter = require('Router/userRouter');
 
 app.use(userRouter);
 

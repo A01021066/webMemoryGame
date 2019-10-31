@@ -1,4 +1,4 @@
-let db = require('../database/connection');
+let db = require('../public/database/connection');
 
 //add a user to the database
 //ranking the user based on score
