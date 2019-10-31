@@ -1,0 +1,50 @@
+{{>header}}
+
+<p class= "menuItem" id = "rank">Your score {{userScore}} were ranked <span id="userRank">{{userRank.0.rank1}}</span>
+ on the leader board.</p>
+<table class = rankingTable>
+    <tr>
+        <th id = "userName">User Name</th>
+        <th id = "userScore">Score</th>
+    </tr>
+
+<tr>
+        <th>{{users.0.username}}</th>
+        <th>{{users.0.score}}</th> 
+</tr>
+<tr>
+        <th>{{users.1.username}}</th>
+        <th>{{users.1.score}}</th> 
+</tr>
+<tr>
+        <th>{{users.2.username}}</th>
+        <th>{{users.2.score}}</th> 
+</tr>
+<tr>
+        <th>{{users.3.username}}</th>
+        <th>{{users.3.score}}</th> 
+</tr>
+<tr>
+        <th>{{users.4.username}}</th>
+        <th>{{users.4.score}}</th> 
+</tr>
+
+</table>
+
+{{!-- increment the rank by 1 because it makes sense --}}
+<script>
+    window.onload = () =>{
+        let rawRank = parseInt(document.getElementById("userRank").textContent);
+        let fineRank = rawRank+1;
+        document.getElementById("userRank").textContent = fineRank;
+    }
+</script>
+
+
+
+<div class="menuItem" id="goBack">
+    <button onclick="restart()">Restart</button>
+    </div>
+
+
+{{>footer}}

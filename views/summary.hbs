@@ -1,0 +1,19 @@
+{{>header}}
+<div class = "menuItem">
+    <p>Game over. Here's your score: </p>
+    <p id = "scoreText"></p>
+    <br>
+    <p>If you wish to submit your score to the leaderboard,</p> 
+    <p>please enter your name below and press submit:</p>
+    <input id="inputName" type="text" maxlength="10"/>
+    <br>
+    <br>
+    <button onclick="submitScore()">Submit</button>
+</div>
+<script>
+        summaryPage();
+</script>
+<div class="menuItem" id="goBack">
+    <button onclick="restart()">Restart</button>
+    </div>
+{{>footer}}

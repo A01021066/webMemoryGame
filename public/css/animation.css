@@ -1,0 +1,86 @@
+
+
+@keyframes fadeOut {
+    0% { opacity: 1;
+    }
+    100% { opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+  
+@keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+    }
+ 
+    100% {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+      }
+}
+
+
+@keyframes flip {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+              background-color:lightgray;
+              color:lightgray;
+    }
+    10% {
+        -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+          background-color:yellow;
+          color:yellow;
+      }
+  
+      90% {
+              -webkit-transform: rotateY(180deg);
+                      transform: rotateY(180deg);
+                background-color:yellow;
+                color:yellow;
+          
+      }
+  
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+        background-color:lightgray;
+        color:lightgray;
+    }
+}
+
+@keyframes correctClickFlip {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+              background-color:lightgray;
+              color:lightgray;
+    }
+    100% {
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg);
+              background-color:greenyellow;
+              color:greenyellow;
+    }
+}
+
+@keyframes wrongClickFlip {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+              background-color:lightgray;
+              color:lightgray;
+    }
+    100% {
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg);
+              background-color:red;
+              color:red;
+    }
+}

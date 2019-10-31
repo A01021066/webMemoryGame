@@ -1,0 +1,166 @@
+*{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header {
+    text-align: right;
+    margin-left: 10px;
+    display: inline-block;
+    
+}
+body {
+    background-color:beige;
+}
+footer {
+    text-align: center;
+    bottom: 1%;
+    position:fixed;
+    left: 0;
+    width: 100%;
+}
+
+.boardHeaderItem{
+    display: inline-block;
+    
+}
+
+.gameHeaderDiv {
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+#goBack {
+        text-align: center;
+        bottom: 10%;
+        position:fixed;
+        left: 0;
+        width: 100%;
+}
+
+.rankingTable {
+        text-align: center;
+        margin-left: 38%;
+        display: inline-block;
+}
+
+#userName {
+    font-size:2em;
+    font-weight:bold;
+}
+
+#userScore {
+    font-size:2em;
+    font-weight:bold;
+}
+
+#studentId{    
+    color: gainsboro;
+}
+
+.menuItem {
+    display: block;
+    text-align: center;
+}
+
+.container {
+    margin:0 auto;
+    background-color:gray; 
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: gray;
+}
+
+#rotate {
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+#correct{
+    animation-name:flip;
+    animation-duration:4s;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: gray;
+    background-color: white;
+    color:white;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
+    text-align: center;
+}
+
+#corrected {
+    animation-name:correctClickFlip;
+    animation-duration:0.5s;
+    animation-fill-mode: forwards;
+}
+
+#wronged {
+    animation-name:wrongClickFlip;
+    animation-duration:0.5s;
+    animation-fill-mode: forwards;
+}
+
+.tile {
+    margin:0;
+    opacity: 1;
+    animation-name:fadeIn;
+    animation-duration:0.5s;
+    animation-fill-mode: fowards;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: gray;
+    background-color: lightgray;
+    color:lightgray;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
+}
+
+
+
+#endingTile {
+    margin:0;
+    opacity: 1;
+    animation-name:fadeOut;
+    animation-duration:0.5s;
+    animation-fill-mode: fowards;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: gray;
+    background-color: lightgray;
+    color:lightgray;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
+    pointer-events: none;
+}
+
+#scoreText {
+    font-weight: bold;
+    font-size: 3em;
+}
+
+
+
+
+
+
+
+
+
+  

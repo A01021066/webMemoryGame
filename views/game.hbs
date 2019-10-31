@@ -1,0 +1,17 @@
+{{>header}}
+<div class="gameHeaderDiv">
+<label class="gameHeader">Tile: <span id="tileCount">{{tileCount}}</span></label>
+<label class="gameHeader">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+<label class="gameHeader">Score: <span id="score">0</span></label>
+</div>
+<div>
+    <script type="text/javascript">
+        gameBoard({{col}}, {{row}})
+    </script>
+</div>
+<div class="menuItem" id="goBack">
+    <button onclick="terminate()">Terminate</button>
+</div>
+
+
+{{>footer}}
