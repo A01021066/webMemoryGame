@@ -3,12 +3,21 @@ function endGame(){
     //terminate the game, 
     //redirect the window to summary page
     const score = document.getElementById("score").textContent;
-    window.localStorage.setItem("score", score);
+    const tile = parseInt(localStorage.getItem('tileCount'));
+    let rankingscore = parseInt(score) * parseInt(tile);
+    window.localStorage.setItem("rawScore", score);
+    window.localStorage.setItem("score", rankingscore);
     document.getElementById("score").textContent = "";
     document.getElementsByClassName("gameHeader")[2].textContent = "GAME OVER!"
     resetBoard();
     setTimeout(function(){window.location.replace("/summary")}, 450);
 }
+
+function updateHighestTile(){
+    window.localStorage.getItem()
+
+}
+
 function resetBoard(){
     //setting the tiles to ending animation
     let list = document.getElementsByClassName("tile");

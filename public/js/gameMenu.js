@@ -16,8 +16,13 @@ function restart(){
 
 function summaryPage(){
     let score = document.createTextNode(window.localStorage.getItem("score"));
-    
+    let highestTile = document.createTextNode(window.localStorage.getItem("tileCount"));
+    let rawScore = document.createTextNode(window.localStorage.getItem("rawScore"));
+    let highestTileText = document.getElementById("highestTileText");
+    let rawScoreText = document.getElementById("rawScoreText");
     let scoreText = document.getElementById("scoreText");
+    highestTileText.appendChild(highestTile);
+    rawScoreText.appendChild(rawScore);
     scoreText.appendChild(score);
 }
 

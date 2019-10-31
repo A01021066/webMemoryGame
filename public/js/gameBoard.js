@@ -37,10 +37,16 @@ function gameBoard(col, row){
 
 function selectTile(col, row){
 
-
+    
     let boardSize = col * row;
     let tileCount = parseInt(document.getElementById("tileCount").textContent, 10);
     let correctTiles = new Array(tileCount);
+
+    //update the highest tile count achieved.
+    let record = parseInt(window.localStorage.getItem("tileCount"));
+    if (tileCount >= record){
+        window.localStorage.setItem("tileCount", tileCount);
+    }
 
     let i = 0;
     //select random tiles to put into correctTiles array

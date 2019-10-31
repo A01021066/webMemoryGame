@@ -9,6 +9,9 @@
 <br>
 <div>
     <script type="text/javascript">
+        window.onload = ()=>{
+            window.localStorage.setItem("tileCount", {{StartingTileCount}});
+        }
         gameBoard(5, 5)
     </script>
 </div>
