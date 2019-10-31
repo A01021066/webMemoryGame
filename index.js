@@ -23,7 +23,7 @@ app.engine(
   app.set('views', 'views');
   
 app.get('/', function(req, res){
-    res.render('game', {tileCount: '3', col: '5', row:'5'})
+    res.render('game', {StartingTileCount: '3'})
 })
 
 

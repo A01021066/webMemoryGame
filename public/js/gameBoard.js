@@ -1,3 +1,4 @@
+let clickedWrong = false;
 function gameBoard(col, row){
 
     //populate the game board with piles
@@ -18,6 +19,7 @@ function gameBoard(col, row){
         container.appendChild(div);
     }
     document.body.appendChild(container);
+
 
     //call back chain to start the game set up
     //selectTile() selects random tiles as correct tiles
@@ -59,9 +61,14 @@ function selectTile(col, row){
 function flipTile(correctTiles, col, row){
     //flip all of the selected piles(animation)
     let tiles = document.getElementsByClassName("tile");
+    let cheatMode = document.getElementById("cheat").checked;
     for (let i = 0; i < tiles.length; i++){
         if (correctTiles.includes(i)){
-        tiles[i].id="correct";
+            if(cheatMode){
+                tiles[i].id="correctCheat";
+            } else if (!cheatMode){
+                tiles[i].id="correct";
+            }
         } else {
             tiles[i].id="wrong"
         }
@@ -85,7 +92,7 @@ function mapTile(col, row){
     let list = document.getElementsByClassName('tile');
 
     for (let n = 0; n < list.length; n++){
-        if (list[n].id == "correct"){
+        if (list[n].id == "correct" || list[n].id == "correctCheat"){
             list[n].addEventListener('click', function(event){
                 let n = event.path[0].textContent;
                 correctClick(n, col, row);
@@ -119,7 +126,7 @@ function correctClick(n, col, row){
     //return
     //else, preced to the rest of the code
     for (let m = 0; m < list.length; m++){
-        if (list[m].id == "correct"){
+        if (list[m].id == "correct" || list[m].id == "correctCheat"){
             return;
         }
     }
@@ -128,28 +135,42 @@ function correctClick(n, col, row){
     let oldTile = parseInt(document.getElementById("tileCount").textContent, 10);
     setTimeout(function(){resetBoard()}, 1000);
     setTimeout(function(){
-    document.getElementById("tileCount").textContent = 1+oldTile;
     document.body.removeChild(document.getElementsByClassName("container")[0]);
     }, 1500);
 
 
     //instantiating a new game board for next level
-    //adding row or col, depending on tileCount
-    let next = parseInt(document.getElementById("tileCount").textContent, 10);
+    //adding row or col, depending on which one is larger
+    let next = row > col;
     let ding = new Audio("../sound/ding.mp3");
     ding.play();
-    if (next % 2 == 0){
-        setTimeout(function(){gameBoard(col+1, row)}, 1500);
+    
+    //if the user made a wrong click
+    //the tile number goes down by 1, minimum 3 tiles
+    //wont increase row or column
+    if (clickedWrong){
+        if(oldTile > 3){
+            document.getElementById("tileCount").textContent = oldTile - 1;
+        }
+        setTimeout(function(){gameBoard(col, row)}, 1500);
+        clickedWrong = false;
     } else {
-        setTimeout(function(){gameBoard(col, row+1)}, 1500);
+        if (next){
+            document.getElementById("tileCount").textContent = 1+oldTile;
+            setTimeout(function(){gameBoard(col+1, row)}, 1500);
+            clickedWrong = false;
+        } else {
+            document.getElementById("tileCount").textContent = 1+oldTile;
+            setTimeout(function(){gameBoard(col, row+1)}, 1500);
+            clickedWrong = false;
+        }
     }
-
 }
 
 
 function wrongClick(n, col, row){
     let list = document.getElementsByClassName('tile');
-
+    clickedWrong = true;
 
     //preventing the already clicked wrong tile from:
     //playing the animation again;

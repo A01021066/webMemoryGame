@@ -1,15 +1,21 @@
 {{>header}}
 <div class="gameHeaderDiv">
-<label class="gameHeader">Tile: <span id="tileCount">{{tileCount}}</span></label>
+<label class="gameHeader">Tile: <span id="tileCount">{{StartingTileCount}}</span></label>
 <label class="gameHeader">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
 <label class="gameHeader">Score: <span id="score">0</span></label>
 </div>
+<br>
+<br>
+<br>
 <div>
     <script type="text/javascript">
-        gameBoard({{col}}, {{row}})
+        gameBoard(5, 5)
     </script>
 </div>
 <div class="menuItem" id="goBack">
+    {{!-- cheat mode default on --}}
+    <input type="checkbox" id="cheat" checked>Cheat Mode for Testing Purpose<br>
+    <br>
     <button onclick="terminate()">Terminate</button>
 </div>
 
