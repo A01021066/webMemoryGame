@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false })) // middleware
+var port = process.env.PORT || 8080;
 
 
 
@@ -31,4 +32,4 @@ let userRouter = require('Router/userRouter');
 
 app.use(userRouter);
 
-app.listen(3000, () => console.log('Server ready'))
+app.listen(port, () => console.log('Server ready'))
